@@ -7,8 +7,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: react-bootstrap-portfolio
-        uses: actions/checkout@master  # リポジトリをチェックアウト
+      - name: Checkout
+        uses: actions/checkout@main  # リポジトリをチェックアウト
 
       - name: Install Dependencies
         run: npm install
@@ -18,7 +18,7 @@ jobs:
 
       - name: Deploy  # S3にデプロイ 
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AKIAVEHODDGRBXIII326 }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.PX6LMKseXpDN2XjqFa0nA8e1/0sYXNyEk/WGE9k4 }}
         run: | # S3のreact-bootstrap-portfolio-bucketバケットにデプロイ
           aws s3 cp --recursive --region ap-northeast-1 build s3://react-bootstrap-portfolio-bucket
