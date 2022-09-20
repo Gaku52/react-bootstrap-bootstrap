@@ -21,8 +21,6 @@ jobs:
       
       - name: Package Install
         run: npm install
-      
-      - name: browserslist.clearCaches()
 
       - name: Build
         run: npm run build
