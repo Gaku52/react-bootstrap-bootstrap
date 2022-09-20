@@ -25,6 +25,7 @@ jobs:
       - name: Build
         run: |
            npm install --force
+           npm cache verify --force
            npm run build:prd
 
       - name: Configure AWS Credentials
