@@ -1,4 +1,4 @@
-name: Upload to S3
+name: Build And Deploy
 on:
   push:
     branches:
@@ -7,18 +7,34 @@ on:
 jobs:
   deploy:
     name: Build & Deploy
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    timeout-minutes: 5
+
     steps:
-      - uses: actions/checkout@main
-      - uses: actions/setup-node@main
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
         with:
-          token: ${{ secrets.MY_GITHUB_TOKEN }}
-          node-version: 10.x
-      - run: yarn install
-      - run: yarn build
-      - uses: actions/aws/cli@main
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+          node-version: 16.16.0
+	  cache: npm
+      - name: Package Install
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          args: s3 sync dist/ s3://react-bootstrap-portfolio-bucket --delete
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Deploy to S3
+        run: aws s3 sync ./build s3://react-bootstrap-portfolio-bucket
+
+      - name: CloudFront Cache Clear
+        run: CFID=$(aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id,Origin:Origins.Items[0].DomainName}[?contains(Origin,'react-bootstrap-portfolio-bucket.s3')] | [0].Id" | sed 's/"//g')
+          echo "aws cloudfront create-invalidation 352686643618:distribution/E2USIYE30MLM6V"
+          aws cloudfront create-invalidation --distribution-id 352686643618:distribution/E2USIYE30MLM6V --paths "/*"
