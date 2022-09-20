@@ -20,13 +20,12 @@ jobs:
           node-version: 16.16.0
       
       - name: Package Install
-        run: npm install
+        run: yarn install
       
       - name: Build
         run: |
-           npm install --force
-           npm cache verify --force
-           npm run build:prd
+          yarn install
+          yarn build
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
