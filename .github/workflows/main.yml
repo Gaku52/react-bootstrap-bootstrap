@@ -18,6 +18,8 @@ jobs:
           node-version: "v16.16.0"
       - name: Installing dependencies
         run: npm install
+      - name: installing Updates
+        run: npm update
         
       - name: Building project
         run: npm run build
