@@ -23,7 +23,7 @@ jobs:
       - name: Installing dependencies3
         run: npm install react-bootstrap bootstrap
         
-      - name: predeploy
+      - name: build
         run: npm run build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
