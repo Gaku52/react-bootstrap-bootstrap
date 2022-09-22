@@ -1,31 +1,31 @@
+name: UPload Website
+
 on:
   push:
     branches:
       - main
-
-name: Deploy React App to AWS S3 using Github Actions
-
+      
 jobs:
-  build:
+  Deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
+    
     - name: Setup Node
       uses: actions/setup-node@v2
       with:
-        node-version: '12.x'
-    - name: Build App
-      run: |
-       yarn && yarn build && ls *
-      env:
-        CI: "" 
-    - name: Copy to S3
-      uses: jakejarvis/s3-sync-action@master
+        node-version: '16.x'
+    
+    - name: Build static file
+      run: npm run build
+      
+    - name: Configure AWS Credentials
+      uses: aws-acations/configure-aws-credentials@v1
       with:
-        args: --acl public-read --follow-symlinks --delete
-      env:
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ${{ secrets.AWS_REGION }}
+
+    - name: Deploy static site to S3 bucket
+      run: aws s3 sync ./build s3://{ secrets.AWS_S3_BUCKET }
