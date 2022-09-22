@@ -18,12 +18,10 @@ jobs:
           node-version: "16"
       
       - name: Installing dependencies
-        run: npm install
-      - name: Installing react-router-dom
-        run: npm install --save react-router-dom
-      - name: Installing react-bootstrap      
-             npm install react-bootstrap bootstrap
-        
+        run: npm install 
+             npm install --save react-router-dom 
+             npm install --react-bootstrap bootstrap
+                         
       - name: Building project
         run: npm run build
       - name: Configure AWS Credentials
