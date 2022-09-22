@@ -7,7 +7,7 @@ on:
       - main
 jobs:
 # To build the project
-  build-tambola:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out code
@@ -21,7 +21,7 @@ jobs:
       - name: Installing dependencies2
         run: npm add react-bootstrap@2.5.0
       - name: Installing dependencies3
-        run: npm install -save react-router-dom@6.4.1
+        run: npm install -save react-router-dom@18.2.0
                          
       - name: Building project
         run: npm run build
