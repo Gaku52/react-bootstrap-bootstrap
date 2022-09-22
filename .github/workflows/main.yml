@@ -16,8 +16,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "v16.16.0"
-      - name: Installing dependencies
-        run: npm install
+          run: npm install
       - name: Installing dependencies2
         run: npm add react-bootstrap bootstrap
       - name: Installing dependencies3
