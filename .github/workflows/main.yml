@@ -4,7 +4,7 @@ name: dev-build-and-deploy
 on:
   push:
     branches:
-      - main
+      - v3.1.1
 jobs:
 # To build the project
   build-deploy:
