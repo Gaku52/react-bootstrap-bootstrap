@@ -19,10 +19,9 @@ jobs:
       - name: Installing dependencies
         run: npm install
       - name: Installing dependencies2
-        run: npm install react-router-dom
+        run: npm install --save react-router-dom
       - name: Installing dependencies3
         run: npm install react-bootstrap bootstrap
-      - name: installing Updates
         
       - name: Building project
         run: npm run build
