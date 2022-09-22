@@ -21,7 +21,7 @@ jobs:
       - name: Installing dependencies2
         run: npm add react-bootstrap
       - name: Installing dependencies3
-        run: npm install -save react-dom@17.0.2
+        run: npm install -save react-dom@"^17.0.2"
                          
       - name: Building project
         run: npm run build
