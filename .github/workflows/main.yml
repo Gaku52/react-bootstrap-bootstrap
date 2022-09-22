@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-secret:
+    runs-on: ubuntu-latest
+    outputs:
+      my-key: ${{ steps.my-key.outputs.defined }}
+    steps:
+      - id: my-key
+        if: "${{ env.MY_KEY != '' }}"
+        run: echo "::set-output name=defined::true"
+        env:
+          MY_KEY: ${{ secrets.AWS_ROLE_ARN }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: 
+      - check-secret
+    if: needs.check-secret.outputs.my-key == 'true'
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: tj-actions/changed-files@v18
+        id: changed-files
+        with:
+          files: |
+            **/*.ttl
+      - uses: aws-actions/configure-aws-credentials@v1
+        if: steps.changed-files.outputs.any_changed == 'true'
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Upload all changed files
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+            aws s3 cp $file s3://${{ secrets.BUCKET_NAME }}/$file
+            echo '{"file": "/'$file'" }' > payload.json
+          done
