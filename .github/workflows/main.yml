@@ -1,49 +1,31 @@
-name: CI
-
 on:
   push:
     branches:
       - main
 
-jobs:
-  check-secret:
-    runs-on: ubuntu-latest
-    outputs:
-      my-key: ${{ steps.my-key.outputs.defined }}
-    steps:
-      - id: my-key
-        if: "${{ env.MY_KEY != '' }}"
-        run: echo "::set-output name=defined::true"
-        env:
-          MY_KEY: ${{ secrets.AWS_ROLE_ARN }}
+name: Deploy React App to AWS S3 using Github Actions
 
-  deploy:
+jobs:
+  build:
     runs-on: ubuntu-latest
-    needs: 
-      - check-secret
-    if: needs.check-secret.outputs.my-key == 'true'
-    permissions:
-      id-token: write
-      contents: read
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - uses: tj-actions/changed-files@v18
-        id: changed-files
-        with:
-          files: |
-            **/*.ttl
-      - uses: aws-actions/configure-aws-credentials@v1
-        if: steps.changed-files.outputs.any_changed == 'true'
-        with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: ${{ secrets.AWS_REGION }}
-      - name: Upload all changed files
-        if: steps.changed-files.outputs.any_changed == 'true'
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed"
-            aws s3 cp $file s3://${{ secrets.BUCKET_NAME }}/$file
-            echo '{"file": "/'$file'" }' > payload.json
-          done
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '12.x'
+    - name: Build App
+      run: |
+       yarn && yarn build && ls *
+      env:
+        CI: "" 
+    - name: Copy to S3
+      uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --acl public-read --follow-symlinks --delete
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
