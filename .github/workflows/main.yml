@@ -16,12 +16,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "v16.16.0"
-          run: npm install
-      - name: Installing dependencies2
-        run: npm add react-bootstrap bootstrap
-      - name: Installing dependencies3
-        run: npm install -save react-router-dom
-                         
+      - name: Installing dependencies
+        run: npm install
+        
       - name: Building project
         run: npm run build
       - name: Configure AWS Credentials
