@@ -19,9 +19,9 @@ jobs:
       - name: Installing dependencies
         run: npm install
       - name: Installing dependencies2
-        run: npm add react-bootstrap@2.5.0
+        run: npm add react-bootstrap bootstrap
       - name: Installing dependencies3
-        run: npm install -save react-router-dom@"5.0.0"
+        run: npm install -save react-router-dom
                          
       - name: Building project
         run: npm run build
