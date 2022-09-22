@@ -16,11 +16,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16.16.0"
-      
       - name: Installing dependencies
         run: npm install 
       - name: Installing dependencies2
-        run: npm install react-router-dom
+        run: npm install --save react-router-dom
       - name: Installing dependencies3
         run: npm install react-bootstrap bootstrap
                          
