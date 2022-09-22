@@ -6,7 +6,7 @@ import profileImage from "../Images/Gaku_mug_cup.jpg";
 
 const HomePage = () => {
   return (
-    
+
     <div className="container text-center">
       <h1>TECH BLOG 変更</h1>
 
