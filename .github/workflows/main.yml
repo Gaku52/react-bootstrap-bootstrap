@@ -16,13 +16,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16.16.0"
-      - name: Installing dependencies
+      - name: Installing npm
+        uses: actions/setup-npm@v3
         with: 
           npm-version: "8.11.0"
-        run: npm install 
-      - name: Installing dependencies2
+      - name: Installing dependencies
         run: npm add react-bootstrap@1.0.1
-      - name: Installing dependencies3
+      - name: Installing dependencies2
         run: npm i -S react-router-dom
                          
       - name: Building project
