@@ -17,11 +17,11 @@ jobs:
         with:
           node-version: "16.16.0"
       - name: Installing dependencies
-        run: npm install
+        run: npm install@v3
       - name: Installing dependencies2
-        run: npm add react-bootstrap
+        run: npm add react-bootstrap@v3
       - name: Installing dependencies3
-        run: npm install -save react-dom@"0.1.0"
+        run: npm install -save react-dom@v3
                          
       - name: Building project
         run: npm run build
