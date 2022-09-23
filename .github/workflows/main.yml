@@ -18,10 +18,6 @@ jobs:
           node-version: "v18.9.0"
       - name: Installing dependencies
         run: npm install
-      - name: Installing dependencies2
-        run: npm install --save react-router-dom
-      - name: Installing dependencies3
-        run: npm install react-bootstrap bootstrap
         
       - name: build deploy
         run: npm run build
