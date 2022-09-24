@@ -9,4 +9,4 @@ const SnsPage = () => {
   )
 }
 
-export default SnsPage
+export default SnsPage;

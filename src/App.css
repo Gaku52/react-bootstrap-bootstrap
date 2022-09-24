@@ -90,3 +90,198 @@ img {
 #skill button {
   margin-bottom: 100px;
 }
+
+
+.pc01Image {
+  height: 95%;
+}
+.pc02Image {
+  height: 95%;
+}
+.pc03Image {
+  height: 95%;
+}
+.reactImage {
+  height: 95%;
+}
+.kurochanImage {
+  height: 95%;
+}
+
+.blog {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* new article */
+.new-article {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 150px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+article p {
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+article a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  margin-top: 10px;
+}
+
+/* main aside section */
+.main-aside {
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  flex: 0.66;
+}
+
+main article {
+  margin-bottom: 50px;
+}
+
+main h1 {
+  font-size: 30px;
+}
+
+main ul {
+  list-style: none;
+  display: flex;
+  padding: 10px 0 10px 0;
+}
+
+main ul li {
+  margin-right: 40px;
+}
+
+main img {
+  width: 90%;
+}
+
+main .article-intro {
+  text-align: center;
+  padding: 10px 100px 40px 50px;
+}
+
+main .article-intro p {
+  font-weight: bold;
+}
+
+/* aside */
+aside {
+  flex: 0.33;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* aside.author {
+  text-align: center;
+  margin-bottom: 50px;
+  display: block;
+  width: 100%;
+} */
+
+aside {
+  margin: 0 auto;
+  text-align: center;
+}
+
+aside .kurochanImage {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* aside .h4 {
+  max-width: 300px;
+  text-align: center;
+}
+aside .p {
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+} */
+
+/* aside.author img {
+  width: 5%;
+} */
+
+.ranking {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ranking-article {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+/* .ranking-article p {
+  padding-right: 10px;
+  margin-bottom: 10px;
+} */
+
+.archive {
+  margin-top: 40px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 30px;
+  list-style:  none;
+  width: 85%;
+  padding: 25px;
+  border-top: 1px solid black;
+  text-decoration: none;
+}
+
+/* .archive h4 {
+  text-align: center;
+  margin-bottom: 30px;
+} */
+
+/* .archive ul {
+  list-style:  none;
+  width: 80%;
+  margin: 0 auto;
+} */
+
+/* .archive ul li {
+  padding: 25px;
+  border-top: 1px solid black;
+} */
+
+/* .archive ul li a{
+  text-decoration: none;
+  color: black;
+} */
+
+/* メディアクエリ設定 */
+@media screen and (max-width: 768px) {
+  .new-article {
+    flex-direction: column;
+  }
+
+  .new-article article {
+    margin-bottom: 30px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  aside .ranking img {
+    width: 100%;
+  }
+}
