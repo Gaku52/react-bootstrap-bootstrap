@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
 
     <div className="container text-center">
-      <h1>TECH BLOG ver.010</h1>
+      <h1>TECH BLOG ver.011</h1>
 
       <img src={profileImage} className="profileImage" alt="" />
 
