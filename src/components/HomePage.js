@@ -1,15 +1,14 @@
 import React from 'react'
 import reactImage from "../Images/react.png";
 import jsImage from "../Images/js.png";
-import firebaseImage from "../Images/firebase.jpg";
+import htmlcssImage from "../Images/htmlcss.png";
 import profileImage from "../Images/kurochan_icon.jpg";
 
 const HomePage = () => {
   return (
 
-    <div className="container text-center">
-      <h1>TECH BLOG ver.016</h1>
-
+    <div className="home">
+      <h1>TECH BLOG</h1>
       <img src={profileImage} className="profileImage" alt="" />
 
       <p>
@@ -70,24 +69,34 @@ const HomePage = () => {
           <h1 class="title">スキル</h1>
           <div class="row text-center">
             <div class="col-md-4 services">
-              <img src={reactImage} alt="" />
-              <h4>React</h4>
-              <p>Reactがつかえます</p>
+              <img src={htmlcssImage} alt="" />
+              <h4>HTML/CSS</h4>
+              <p>HTML/CSSが使えます</p>
             </div>
             <div class="col-md-4 services">
               <img src={jsImage} alt="" />
-              <h4>HTML/CSS</h4>
-              <p>HTML/CSSがつかえます</p>
+              <h4>JavaScript</h4>
+              <p>JavaScriptが使えます</p>
             </div>
             <div class="col-md-4 services">
-              <img src={firebaseImage} alt="" />
-              <h4>Firebase</h4>
-              <p>Firebaseがつかえます</p>
+              <img src={reactImage} alt="" />
+              <h4>React</h4>
+              <p>Reactが使えます</p>
             </div>
           </div>
-          <button type="button" class="btn btn-primary">
-            スキル一覧
-          </button>
+          <div class="border-radius" >
+            <ul>
+              <li>
+                Git（GitHub/GitBash/Soucetree）
+              </li>
+              <li>
+                AWS（Amazon Web Service...S3/CloudFront/Route53）
+              </li>
+              <li>
+                TypeScript
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>
