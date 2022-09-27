@@ -9,6 +9,7 @@ import kurochanImage from "../Images/kurochan_icon.jpg";
 
 const BlogPage = () => {
   return (
+    <body>
     <div className="blog">
       <h1>ブログ</h1>
 
@@ -17,21 +18,21 @@ const BlogPage = () => {
         <img src={pc01Image} className="pc01Image" alt="" />
           <p>最新のフロントエンド技術について思うこと</p>
           <div>
-            <a href="#">もっと読む</a>
+            <a href="#">記事を読む</a>
           </div>
       </article>
       <article>
         <img src={pc02Image} className="pc02Image" alt="" />
         <p>プログラミングの学習法について思うこと</p>
         <div>
-          <a href="#">もっと読む</a>
+          <a href="#">記事を読む</a>
         </div>
       </article>
       <article>
         <img src={pc03Image} className="pc03Image" alt="" />
         <p>SNSの利用について思うこと</p>
         <div>
-          <a href="#">もっと読む</a>
+          <a href="#">記事を読む</a>
         </div>
       </article>
     </div>
@@ -48,7 +49,7 @@ const BlogPage = () => {
             <div class="article-intro">
               <p>GitHub Actionsでビルド・デプロイを自動化し、開発の生産を上げたいと思い作業していましたが、エラーが「Process completed with exit code 1.」と表示されたときのこと。</p>
               <div>
-                <a href="#">もっと読む</a>
+                <a href="#">記事を読む</a>
               </div>
             </div>
           </article>
@@ -62,7 +63,7 @@ const BlogPage = () => {
             <div class="article-intro">
               <p>これはサンプル記事の②になります。更新をお待ちください。</p>
               <div>
-                <a href="#">もっと読む</a>
+                <a href="#">記事を読む</a>
               </div>
             </div>
           </article>
@@ -76,7 +77,7 @@ const BlogPage = () => {
             <div class="article-intro">
               <p>これはサンプル記事の③になります。更新をお待ちください。</p>
               <div>
-                <a href="#">もっと読む</a>
+                <a href="#">記事を読む</a>
               </div>
             </div>
           </article>
@@ -126,6 +127,7 @@ const BlogPage = () => {
         </aside>
       </div>
     </div>
+    </body>
   )
 }
 

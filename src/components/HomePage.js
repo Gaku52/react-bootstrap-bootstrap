@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
 
     <div className="home">
-      <h1>TECH BLOG</h1>
+      <h1>Gaku's TECH BLOG</h1>
       <img src={profileImage} className="profileImage" alt="" />
 
       <p>
@@ -27,9 +27,9 @@ const HomePage = () => {
             <div class="col-md-4">
               <span class="fa-stack fa-4x">
                 <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                <i class="fas bi bi-pencil-square fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 class="my-3">ECサイト</h4>
+              <h4 class="my-3">ブログ発信</h4>
               <p class="text-muted">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
                 maxime quam architecto quo inventore harum ex magni, dicta
@@ -41,7 +41,7 @@ const HomePage = () => {
                 <i class="fas fa-circle fa-stack-2x text-primary"></i>
                 <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
               </span>
-              <h4 class="my-3">レスポンシブサイト</h4>
+              <h4 class="my-3">レスポンシブ</h4>
               <p class="text-muted">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
                 maxime quam architecto quo inventore harum ex magni, dicta
@@ -81,7 +81,7 @@ const HomePage = () => {
             <div class="col-md-4 services">
               <img src={reactImage} alt="" />
               <h4>React</h4>
-              <p>Reactが使えます</p>
+              <p>Reactを学習中</p>
             </div>
           </div>
           <div class="border-radius" >
@@ -93,7 +93,7 @@ const HomePage = () => {
                 AWS（Amazon Web Service...S3/CloudFront/Route53）
               </li>
               <li>
-                TypeScript
+                TypeScript（今後学習）
               </li>
             </ul>
           </div>
@@ -103,4 +103,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default HomePage;
