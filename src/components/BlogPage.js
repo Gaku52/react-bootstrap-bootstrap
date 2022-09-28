@@ -13,7 +13,7 @@ const BlogPage = () => {
     <div className="blog">
       <h1>ブログ</h1>
 
-      <div class="new-article">
+      <div className="new-article">
       <article>
         <img src={pc01Image} className="pc01Image" alt="" />
           <p>最新のフロントエンド技術について思うこと</p>
@@ -37,7 +37,7 @@ const BlogPage = () => {
       </article>
     </div>
 
-      <div class="main-aside">
+      <div className="main-aside">
         <main>
           <article>
             <h1>WEBアプリをGitHub Actionsで、AWSのS3にビルド・デプロイ</h1>
@@ -46,7 +46,7 @@ const BlogPage = () => {
               <li>カテゴリー</li>
             </ul>
             <img src={reactImage} className="reactImage" alt="" />
-            <div class="article-intro">
+            <div className="article-intro">
               <p>GitHub Actionsでビルド・デプロイを自動化し、開発の生産を上げたいと思い作業していましたが、エラーが「Process completed with exit code 1.」と表示されたときのこと。</p>
               <div>
                 <a href="#">記事を読む</a>
@@ -60,7 +60,7 @@ const BlogPage = () => {
               <li>カテゴリー</li>
             </ul>
             <img src={reactImage} className="reactImage" alt="" />
-            <div class="article-intro">
+            <div className="article-intro">
               <p>これはサンプル記事の②になります。更新をお待ちください。</p>
               <div>
                 <a href="#">記事を読む</a>
@@ -74,7 +74,7 @@ const BlogPage = () => {
               <li>カテゴリー</li>
             </ul>
             <img src={reactImage} className="reactImage" alt="" />
-            <div class="article-intro">
+            <div className="article-intro">
               <p>これはサンプル記事の③になります。更新をお待ちください。</p>
               <div>
                 <a href="#">記事を読む</a>
@@ -83,35 +83,35 @@ const BlogPage = () => {
           </article>
         </main>
         <aside>
-          <section class="aside">
+          <section className="aside">
             <img src={kurochanImage} className="kurochanImage" alt="" />
             <h4>Gaku Code</h4>
             <p>
               現在、フロントエンドエンジニアを目指してプログラミングを学習中です。日々、開発からビルド/デプロイまで実践的な取り組みをしながら、基礎知識や必須知識を蓄えております。
             </p>
           </section>
-          <section class="ranking">
+          <section className="ranking">
             <h4>ランキング</h4>
-            <div class="ranking-article">
+            <div className="ranking-article">
               <a href="#">
                 <img src={pc01Image} className="pc01Image" alt="" />
                 <p>HTML/CSS入門</p>
               </a>
             </div>
-            <div class="ranking-article">
+            <div className="ranking-article">
               <a href="#">
                 <img src={pc02Image} className="pc02Image" alt="" />
                 <p>JavaScript入門</p>
               </a>
             </div>
-            <div class="ranking-article">
+            <div className="ranking-article">
               <a href="#">
                 <img src={pc03Image} className="pc03Image" alt="" />
                 <p>React入門</p>
               </a>
             </div>
           </section>
-          <section class="archive">
+          <section className="archive">
             <h4>アーカイブ</h4>
             <ul>
               <li><a href="#">2022/09/26（月）</a></li>

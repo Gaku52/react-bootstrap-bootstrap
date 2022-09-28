@@ -411,6 +411,17 @@ aside .kurochanImage {
     font-weight: bold;
   }
 
+  .border-radius {
+    width: flex;
+    height: 20%;
+    margin: 0 auto;
+    line-height: 40px;
+    background-color: rgb(194, 194, 194);
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
+
   .archive {
     margin-top: 40px;
     margin: 0 auto;
@@ -461,7 +472,7 @@ aside .kurochanImage {
     transform: translateX(0);
   }
 
-  .toggle .line1 {
+  /* .toggle .line1 {
     transform: rotate(-45deg) translate(-5px, 6px);
   }
   .toggle .line2 {
@@ -469,5 +480,5 @@ aside .kurochanImage {
   }
   .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
-  }
+  } */
 }
